@@ -19,3 +19,26 @@ function pop(tst){
 }
 
 
+document.querySelectorAll
+let data = [];
+
+async function fetchPlayers() {
+    let storedData = localStorage.getItem('players');
+    if (storedData) {
+        data = JSON.parse(storedData);
+    } else {
+        try {
+            const response = await fetch('\players.json');
+            const fetchedData = await response.json();
+            if (fetchedData) {
+                data = fetchedData;
+                localStorage.setItem("players", JSON.stringify(data));
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            
+        }
+    }
+}
+
+fetchPlayers();
