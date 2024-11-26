@@ -51,11 +51,120 @@
 
   </header>
 
+   <!-- Popup  -->
+  <div id="playerPopup" class="fixed inset-0 flex justify-center  bg-black bg-opacity-50 hidden z-50">
+  <div class="bg-white p-8 rounded-lg   relative shadow-lg overflow-y-auto">
+    <h2 class="text-2xl font-bold mb-6 text-[#00bf63] text-center">Add New Player</h2>
+    
+    
+    <form class="space-y-6">
+      <!--  Name -->
+      <div>
+        <label for="playerName" class="block text-sm font-medium text-gray-700">Player Name</label>
+        <input type="text" id="playerName" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter player name">
+      </div>
+      
+      <!-- Photo -->
+      <div>
+        <label for="photo" class="block text-sm font-medium text-gray-700">Photo</label>
+        <input type="file" id="img" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
 
+      <!-- Position -->
+      <div>
+        <label for="playerPosition" class="block text-sm font-medium text-gray-700">Position</label>
+        <select id="playerPosition" class="w-full text-gray-700 mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="GK">GK</option>
+          <option value="CB">CB</option>
+          <option value="LB">LB</option>
+          <option value="RB">RB</option>
+          <option value="CM">CM</option>
+          <option value="LW">LW</option>
+          <option value="RW">RW</option>
+          <option value="ST">ST</option>
+        </select>
+      </div>
+
+      <!-- Nationality -->
+      <div>
+        <label for="Nationaliter" class="block text-sm font-medium text-gray-700">Nationality</label>
+        <input type="text" id="Nationaliter" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter nationality">
+      </div>
+
+      <!-- Flag -->
+      <div>
+        <label for="flag" class="block text-sm font-medium text-gray-700">Flag</label>
+        <input type="file" id="flag" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Club Name -->
+      <div>
+        <label for="playerClub" class="block text-sm font-medium text-gray-700">Club Name</label>
+        <input type="text" id="club" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter club name">
+      </div>
+
+      <!-- Logo -->
+      <div>
+        <label for="logo" class="block text-sm font-medium text-gray-700">Logo</label>
+        <input type="file" id="logo" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Rating -->
+      <div>
+        <label for="Rating" class="block text-sm font-medium text-gray-700">Rating</label>
+        <input type="text" id="rating" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter player rating">
+      </div>
+
+      <!-- Pace -->
+      <div>
+        <label for="pace" class="block text-sm font-medium text-gray-700">Pace</label>
+        <input type="text" id="pace" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Pace  player">
+      </div>
+
+      <!-- Shooting -->
+      <div>
+        <label for="shooting" class="block text-sm font-medium text-gray-700">Shooting</label>
+        <input type="text" id="shooting" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter shooting player">
+      </div>
+
+      <!-- Passing -->
+      <div>
+        <label for="passing" class="block text-sm font-medium text-gray-700">Passing</label>
+        <input type="text" id="passing" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter passing player">
+      </div>
+
+      <!-- Dribbling -->
+      <div>
+        <label for="dribbling" class="block text-sm font-medium text-gray-700">Dribbling</label>
+        <input type="text" id="dribbling" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter dribbling player ">
+      </div>
+
+      <!-- Defending -->
+      <div>
+        <label for="defending" class="block text-sm font-medium text-gray-700">Defending</label>
+        <input type="text" id="defending" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter defending player ">
+      </div>
+
+      <!-- Physical -->
+      <div>
+        <label for="physical" class="block text-sm font-medium text-gray-700">Physical</label>
+        <input type="text" id="physical" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter physical player">
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="button" class="w-full bg-[#00bf63] text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300" onclick="submitPlayer()">Add Player</button>
+      </div>
+    </form>
+
+     <!-- Close Button -->
+     <button class="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-black" onclick="closePopup()">&times;</button>
+  </div>
+  </div>
     <!-- Players affichage -->
-    <div class="flex flex-wrap justify-center items-center p-6 gap-y-8 " id="players" style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;">
+  <div class="flex flex-wrap justify-center items-center p-6 gap-y-8 " id="players" style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;">
 
-    </div>
+  </div>
 <!--footer  -->
 <footer class="bg-black text-white py-6 ">
      <div class="container  flex flex-col justify-center items-center gap-4">
