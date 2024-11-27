@@ -53,7 +53,7 @@
 
    <!-- Popup  -->
   <div id="playerPopup" class="fixed inset-0 flex justify-center  bg-black bg-opacity-50 hidden z-50">
-  <div class="bg-white p-8 rounded-lg   relative shadow-lg overflow-y-auto">
+  <div class="bg-white p-8 rounded-lg  w-[370px] md:w-[500px]  relative shadow-lg overflow-y-auto">
     <h2 class="text-2xl font-bold mb-6 text-[#00bf63] text-center">Add New Player</h2>
     
     
@@ -67,13 +67,14 @@
       <!-- Photo -->
       <div>
         <label for="photo" class="block text-sm font-medium text-gray-700">Photo</label>
-        <input type="file" id="img" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" id="img" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Entrer URL for Photo">
       </div>
 
       <!-- Position -->
       <div>
         <label for="playerPosition" class="block text-sm font-medium text-gray-700">Position</label>
         <select id="playerPosition" class="w-full text-gray-700 mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="" id="Position" disabled selected>- - -</option>
           <option value="GK">GK</option>
           <option value="CB">CB</option>
           <option value="LB">LB</option>
@@ -94,7 +95,7 @@
       <!-- Flag -->
       <div>
         <label for="flag" class="block text-sm font-medium text-gray-700">Flag</label>
-        <input type="file" id="flag" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" id="flag" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Entrer URL for Flag">
       </div>
 
       <!-- Club Name -->
@@ -106,49 +107,49 @@
       <!-- Logo -->
       <div>
         <label for="logo" class="block text-sm font-medium text-gray-700">Logo</label>
-        <input type="file" id="logo" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" id="logo" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Entrer URL for Logo">
       </div>
 
       <!-- Rating -->
       <div>
         <label for="Rating" class="block text-sm font-medium text-gray-700">Rating</label>
-        <input type="text" id="rating" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter player rating">
+        <input type="number" id="rating" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter player rating">
       </div>
 
       <!-- Pace -->
       <div>
         <label for="pace" class="block text-sm font-medium text-gray-700">Pace</label>
-        <input type="text" id="pace" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Pace  player">
+        <input type="number" id="pace" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Pace player">
       </div>
 
       <!-- Shooting -->
       <div>
         <label for="shooting" class="block text-sm font-medium text-gray-700">Shooting</label>
-        <input type="text" id="shooting" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter shooting player">
+        <input type="number" id="shooting" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter shooting player">
       </div>
 
       <!-- Passing -->
       <div>
         <label for="passing" class="block text-sm font-medium text-gray-700">Passing</label>
-        <input type="text" id="passing" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter passing player">
+        <input type="number" id="passing" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter passing player">
       </div>
 
       <!-- Dribbling -->
       <div>
         <label for="dribbling" class="block text-sm font-medium text-gray-700">Dribbling</label>
-        <input type="text" id="dribbling" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter dribbling player ">
+        <input type="number" id="dribbling" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter dribbling player ">
       </div>
 
       <!-- Defending -->
       <div>
         <label for="defending" class="block text-sm font-medium text-gray-700">Defending</label>
-        <input type="text" id="defending" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter defending player ">
+        <input type="number" id="defending" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter defending player ">
       </div>
 
       <!-- Physical -->
       <div>
         <label for="physical" class="block text-sm font-medium text-gray-700">Physical</label>
-        <input type="text" id="physical" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter physical player">
+        <input type="number" id="physical" class="w-full mt-2 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter physical player">
       </div>
 
       <!-- Submit Button -->
@@ -161,10 +162,21 @@
      <button class="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-black" onclick="closePopup()">&times;</button>
   </div>
   </div>
-    <!-- Players affichage -->
-  <div class="flex flex-wrap justify-center items-center p-6 gap-y-8 " id="players" style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;">
 
-  </div>
+  <div class="flex flex-col " style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;">
+    <div class="flex justify-center items-center p-3 mt-4 ">
+      <input 
+          type="text" 
+          placeholder="Search for a Player" 
+          class="border border-[#00bf63] rounded-lg text-center bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-[#00bf99] w-[400px] p-1" 
+          id="searchInput" onkeyup="searchPlayer()">
+    </div>
+      <!-- Players affichage -->
+    <div class="flex flex-wrap justify-center items-center p-6 gap-y-8 " id="players">
+
+    </div>
+ </div>
+
 <!--footer  -->
 <footer class="bg-black text-white py-6 ">
      <div class="container  flex flex-col justify-center items-center gap-4">
