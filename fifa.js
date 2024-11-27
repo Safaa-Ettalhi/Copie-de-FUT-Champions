@@ -64,7 +64,7 @@ function update(){
   }
 }
 
-
+// recuperation des donner joueurs 
 document.querySelectorAll
 let data = [];
 
@@ -89,6 +89,8 @@ async function fetchPlayers() {
 }
 
 fetchPlayers();
+
+//affichage des joueurs:
 
 let dataplayers = data.players;
 let players = document.getElementById("players");
@@ -174,3 +176,22 @@ function displayAllPlayers(dataplayers){
 }
 displayAllPlayers(dataplayers);
 
+
+
+
+
+// Fonction de recherche
+function searchPlayer() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase(); 
+  const playersDivs = document.querySelectorAll('#players .relative'); 
+
+  playersDivs.forEach(playerDiv => {
+      const playerTextContent = playerDiv.textContent.toLowerCase();
+
+      if (playerTextContent.includes(searchInput)) {
+          playerDiv.style.display = 'block';
+      } else {
+          playerDiv.style.display = 'none';
+      }
+  });
+}
