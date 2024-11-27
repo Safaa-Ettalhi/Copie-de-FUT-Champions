@@ -195,3 +195,48 @@ function searchPlayer() {
       }
   });
 }
+
+// ajouter un joueur 
+function AddPlayer() {
+  // Récupération des valeurs
+  const playerName = document.getElementById('playerName').value;
+  const photo = document.getElementById('img').value; 
+  const playerPosition = document.getElementById('playerPosition').value;
+  const nationality = document.getElementById('Nationaliter').value;
+  const flag = document.getElementById('flag').value; 
+  const club = document.getElementById('club').value;
+  const logo = document.getElementById('logo').value; 
+  const rating = document.getElementById('rating').value;
+  const pace = document.getElementById('pace').value;
+  const shooting = document.getElementById('shooting').value;
+  const passing = document.getElementById('passing').value;
+  const dribbling = document.getElementById('dribbling').value;
+  const defending = document.getElementById('defending').value;
+  const physical = document.getElementById('physical').value;
+
+  // Création  d'un nouvel objet joueur
+  const newPlayer = {
+    id : data.players.length > 0 ? data.players[data.players.length-1].id+1 : 1,
+    name: playerName,
+    position: playerPosition,
+    nationality: nationality,
+    club: club,
+    rating: rating,
+    pace: pace,
+    shooting: shooting,
+    passing: passing,
+    dribbling: dribbling,
+    defending: defending,
+    physical: physical,
+    photo: photo, 
+    flag: flag, 
+    logo: logo 
+  };
+  // ajouter l'objet au liste des players
+  data.players.push(newPlayer);
+  
+  localStorage.setItem('players', JSON.stringify(data));
+  displayAllPlayers(data.players);
+  closePopup();
+
+}
