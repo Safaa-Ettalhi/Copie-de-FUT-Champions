@@ -59,45 +59,45 @@
              <div class="absolute w-full max-w-4xl grid grid-rows-3 grid-cols-5 gap-y-24 "style="top: -10px;">
 
         
-                <div class="row-start-1 col-start-2 flex justify-center relative" >
-                  <img src="baggef.webp" alt="Forward" class="h-24 w-16" onclick="pop(this)">
+                <div class="row-start-1 col-start-2 flex justify-center relative vide" >
+                  <img src="baggef.webp" alt="Forward" class="h-24 w-16 vide" onclick="pop(this)">
                  
                 </div>
-                <div class="row-start-1 col-start-3 flex justify-center" >
-                  <img src="baggef.webp" alt="Forward" class="h-24 w-16" onclick="pop(this)">
+                <div class="row-start-1 col-start-3 flex justify-center " >
+                  <img src="baggef.webp" alt="Forward" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-1 col-start-4 flex justify-center" >
-                  <img src="baggef.webp" alt="Forward" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Forward" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
           
                 
                 <div class="row-start-2 col-start-2 flex justify-center" >
-                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-2 col-start-3 flex justify-center">
-                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-2 col-start-4 flex justify-center">
-                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
           
         
                 <div class="row-start-3 col-start-1 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-3 col-start-2 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-3 col-start-4 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-3 col-start-5 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
                 </div>
         
               </div>
         
-              <div class="relative flex justify-center " style="top: -100px;">
+              <div class="relative flex justify-center " style="top: -100px;" playerId="1">
                 <img src="baggef.webp" alt="Goalkeeper" class="h-24 w-16" onclick="pop(this)">
               </div>
                 
@@ -125,13 +125,15 @@
             
       </section>
 
-      <!-- popup pour ajouter les joueur au terrain -->
+      <!-- popup pour modifier les joueur au terrain -->
       <div id="pop_up_ajoute" class="hidden absolute  top-[15%] z-20 left-[50%] -translate-x-1/2 bg-gray-100 flex justify-center items-center rounded-lg">
         <div class="bg-white shadow-lg rounded-lg p-8  w-[370px] md:w-[500px]  ">
-          <h2 class="text-2xl font-bold mb-6 text-center text-[#00bf63]">Ajouter une Carte de Joueur</h2>
+          <h2 class="text-2xl font-bold mb-6 text-center text-[#00bf63]">Modifier le Joueur</h2>
           
         
           <form id="playerForm" class="space-y-4 ">
+
+            <input type="hidden" id="playerid">
             
             <!-- Nom du joueur -->
              <div class="grid grid-cols-2 gap-4 items-center">
@@ -140,7 +142,7 @@
               <input type="text" id="playerName" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Entrez le nom du joueur">
             </div>
             
-            <!-- Note du joueur -->
+            <!-- Club du joueur -->
             <div>
               <label for="rating" class="block text-gray-700 font-semibold mb-2">clup du Joueur</label>
               <input type="text" id="clup" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="URL de la clup du Joueur">
@@ -150,10 +152,9 @@
             <div>
               <label for="position" class="block text-gray-700 font-semibold mb-2">Position du Joueur</label> 
               <select value="" id="position" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="" id="Position" disabled selected>- - -</option>
                 <option value="ST">ST</option>
                 <option value="CM">CM</option>
-                <option value="RM">RM</option>
+                <option value="RW">RW</option>
                 <option value="RL">RL</option>
                 <option value="CDM">CDM</option>
                 <option value="RB">RB</option>
@@ -172,7 +173,7 @@
             </div> 
             
             <!-- Photo  -->
-            <div>
+            <div class="col-span-2">
               <label for="photoscr" class="block text-gray-700 font-semibold mb-2">Photo du Joueur</label>
               <input type="text" id="photosrc" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="URL de la photo du joueur">
             </div>
@@ -207,7 +208,7 @@
       
             <!-- envoie de formulaire -->
             <div class="text-center">
-              <button type="button" id="btnajout" class="bg-[#00bf63] hover:bg-[#00bf99] text-white font-semibold px-6 py-2 rounded-md">Ajouter</button>
+              <button onclick="update()" type="button" id="btnajout" class="bg-[#00bf63] hover:bg-[#00bf99] text-white font-semibold px-6 py-2 rounded-md" onclick="update()">Modifier</button>
             </div>
              <!-- Close Button -->
             <button class="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-black" onclick="closePopup()">&times;</button>
