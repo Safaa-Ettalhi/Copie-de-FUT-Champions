@@ -132,6 +132,11 @@ function displayAllPlayers(dataplayers){
               <span id="defending" class="text-sm font-bold ">${element.defending}</span>
               <span id="physical" class="text-sm font-bold ">${element.physical}</span>
             </div>
+            <button onclick="deletePlayer(${element.id})" class="p-1 rounded-full bg-red-600  hover:bg-red-800">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7L5 7M10 11V17M14 11V17M7 7V5C7 4.44772 7.44772 4 8 4H16C16.5523 4 17 4.44772 17 5V7M5 7L19 7M12 11V17" />
+              </svg>
+            </button>
            </div>
     `
   }else{
@@ -167,7 +172,12 @@ function displayAllPlayers(dataplayers){
                 <span id="dribbling" class="text-sm font-bold ">${element.reflexes}</span>
                 <span id="defending" class="text-sm font-bold ">${element.speed}</span>
                 <span id="physical" class="text-sm font-bold ">${element.positioning}</span>
-              </div>
+          </div>
+          <button onclick="deletePlayer(${element.id})" class="p-1 rounded-full bg-red-600  hover:bg-red-800">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7L5 7M10 11V17M14 11V17M7 7V5C7 4.44772 7.44772 4 8 4H16C16.5523 4 17 4.44772 17 5V7M5 7L19 7M12 11V17" />
+              </svg>
+          </button>
          </div>
   `
 
