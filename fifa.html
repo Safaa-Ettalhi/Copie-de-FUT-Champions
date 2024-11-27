@@ -45,7 +45,7 @@
         </div>    
        
         
-        <button class="md:hidden text-2xl z-[11]" id="burger">
+        <button class="md:hidden text-2xl z-[11] " id="burger">
           <i class="ri-menu-line"></i>
         </button>
          
@@ -54,51 +54,51 @@
     
 
       <section class="h-[700px] w-full flex justify-around items-center  " style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;" >
-        <div class="relative mt-16">
+        <div class="relative mt-36">
              <img src="https://www.futbin.com/design2/img/static/field-bg.svg" alt="" style="height: 600px; ">
-             <div class="absolute w-full max-w-4xl grid grid-rows-3 grid-cols-5 gap-y-24 "style="top: -10px;">
+             <div class="absolute w-full max-w-4xl grid grid-rows-3 grid-cols-5 gap-y-24 "style="top: -45px;">
 
         
                 <div class="row-start-1 col-start-2 flex justify-center relative vide" >
-                  <img src="baggef.webp" alt="Forward" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
                  
                 </div>
                 <div class="row-start-1 col-start-3 flex justify-center " >
-                  <img src="baggef.webp" alt="Forward" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-1 col-start-4 flex justify-center" >
-                  <img src="baggef.webp" alt="Forward" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
           
                 
                 <div class="row-start-2 col-start-2 flex justify-center" >
-                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-2 col-start-3 flex justify-center">
-                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-2 col-start-4 flex justify-center">
-                  <img src="baggef.webp" alt="Midfielder" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
           
         
                 <div class="row-start-3 col-start-1 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-3 col-start-2 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-3 col-start-4 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
                 <div class="row-start-3 col-start-5 flex justify-center">
-                  <img src="baggef.webp" alt="Defender" class="h-24 w-16 vide" onclick="pop(this)">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
         
               </div>
         
-              <div class="relative flex justify-center " style="top: -100px;" playerId="1">
-                <img src="baggef.webp" alt="Goalkeeper" class="h-24 w-16" onclick="pop(this)">
+              <div class="relative flex justify-center " style="top: -130px;" playerId="1">
+                <img src="baggef.webp" alt="Goalkeeper" class="h-32 w-24" onclick="pop(this)">
               </div>
                 
 
@@ -125,97 +125,24 @@
             
       </section>
 
-      <!-- popup pour modifier les joueur au terrain -->
-      <div id="pop_up_ajoute" class="hidden absolute  top-[15%] z-20 left-[50%] -translate-x-1/2 bg-gray-100 flex justify-center items-center rounded-lg">
-        <div class="bg-white shadow-lg rounded-lg p-8  w-[370px] md:w-[500px]  ">
-          <h2 class="text-2xl font-bold mb-6 text-center text-[#00bf63]">Modifier le Joueur</h2>
-          
-        
-          <form id="playerForm" class="space-y-4 ">
-
-            <input type="hidden" id="playerid">
-            
-            <!-- Nom du joueur -->
-             <div class="grid grid-cols-2 gap-4 items-center">
-            <div>
-              <label for="playerName" class="block text-gray-700 font-semibold mb-2">Nom du Joueur</label>
-              <input type="text" id="playerName" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Entrez le nom du joueur">
-            </div>
-            
-            <!-- Club du joueur -->
-            <div>
-              <label for="rating" class="block text-gray-700 font-semibold mb-2">clup du Joueur</label>
-              <input type="text" id="clup" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="URL de la clup du Joueur">
-            </div>
-            
-            <!-- Position du joueur -->
-            <div>
-              <label for="position" class="block text-gray-700 font-semibold mb-2">Position du Joueur</label> 
-              <select value="" id="position" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="ST">ST</option>
-                <option value="CM">CM</option>
-                <option value="RW">RW</option>
-                <option value="RL">RL</option>
-                <option value="CDM">CDM</option>
-                <option value="RB">RB</option>
-                <option value="LB">LB</option>
-                <option value="CB">CB</option>
-                <option value="GK">GK</option>
-            </select>
-            
-  
-            </div>
-            
-            <!-- Nationalité -->
-           <div>
-              <label for="nationality" class="block text-gray-700 font-semibold mb-2">Nationalité</label>
-              <input type="text" id="nationality" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Entrez la nationalité (URL de l'image)">
-            </div> 
-            
-            <!-- Photo  -->
-            <div class="col-span-2">
-              <label for="photoscr" class="block text-gray-700 font-semibold mb-2">Photo du Joueur</label>
-              <input type="text" id="photosrc" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="URL de la photo du joueur">
-            </div>
+      <!-- popup pour ajouter un joueur au terrain ou le modifier -->
+      <div id="playerModal" class="hidden fixed inset-0 flex justify-center  bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white p-8 rounded-lg  w-[370px] md:w-[500px]  relative shadow-lg overflow-y-auto">
+          <h2 class="text-2xl font-bold mb-6 text-[#00bf63] text-center">Choisis un joueur</h2>
+          <!-- affichage des joueur -->
+          <div id="playersContainer" class="grid grid-cols-2 gap-4 ">
+           
           </div>
-            <!-- Caractéristiques  -->
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label for="pace" class="block text-gray-700 font-semibold mb-2">Vitesse (PAC)*</label>
-                <input type="number" id="pace" value="" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 77">
-              </div>
-              <div>
-                <label for="shooting" class="block text-gray-700 font-semibold mb-2">Tir (SHO)*</label>
-                <input type="number" id="shooting" value="" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 55">
-              </div>
-              <div>
-                <label for="passing" class="block text-gray-700 font-semibold mb-2">Passes (PAS)*</label>
-                <input type="number" id="passing" value="" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 84">
-              </div>
-              <div>
-                <label for="dribbling" class="block text-gray-700 font-semibold mb-2">Dribble (DRI)*</label>
-                <input type="number" id="dribbling" value="" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 79">
-              </div>
-              <div>
-                <label for="defending" class="block text-gray-700 font-semibold mb-2">Défense (DEF)*</label>
-                <input type="number" id="defending" value="" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 55">
-              </div>
-              <div>
-                <label for="physical" class="block text-gray-700 font-semibold mb-2">Physique (PHY)*</label>
-                <input type="number" id="physical" value="" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: 68">
-              </div>
-            </div>
-      
-            <!-- envoie de formulaire -->
-            <div class="text-center">
-              <button onclick="update()" type="button" id="btnajout" class="bg-[#00bf63] hover:bg-[#00bf99] text-white font-semibold px-6 py-2 rounded-md" onclick="update()">Modifier</button>
-            </div>
-             <!-- Close Button -->
-            <button class="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-black" onclick="closePopup()">&times;</button>
-            
-          </form>
+          <div class="flex justify-center items-center">
+            <button onclick="closeModal()" class="mt-4 bg-red-500 text-white px-12 py-2 rounded text-center">Close</button>
+          </div>
+          <button class="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-black" onclick="closeModal()">&times;</button>
         </div>
-      </div>
+      </div>    
+      
+      
+
+      
 
    <!-- Footer -->
     <footer class="bg-black text-white py-6 ">
