@@ -250,3 +250,19 @@ function AddPlayer() {
   closePopup();
 
 }
+
+// supression  d-un joueur 
+function deletePlayer(playerId) {
+
+  const index = data.players.findIndex(player => player.id === playerId);
+ // verification si le player de cette id exict   
+  if (index !== -1) {
+    
+    data.players.splice(index, 1);
+    localStorage.setItem("players", JSON.stringify(data));
+ 
+    displayAllPlayers(data.players);
+
+  }
+}
+
