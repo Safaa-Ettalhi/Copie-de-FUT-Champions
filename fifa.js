@@ -215,18 +215,40 @@ function deletePlayer(playerId) {
 
 // function qui permet dafficher un modal pour ajouter au terrain 
 function pop(card) {
-  if (card.classList.contains('vide')) {
-   
-    console.log('select a player');
     document.getElementById('playerModal').classList.remove('hidden');
-    displayPlayersInModal(data.players, card.parentElement.id); 
-
-  
-  }
+    displayPlayersInModal(data.players, card.parentElement.id);  
 }
 
 // close modal 
 function closeModal() {
   document.getElementById('playerModal').classList.add('hidden');
 }
+
+// afficher les joueur dans le modal
+function displayPlayersInModal(players, target) {
+  // console.log(target); // Vérifiez les données ici
+  const container = document.getElementById('playersContainer');
+  container.innerHTML = ''; 
+
+  players.forEach((player) => {
+    const playerCard = document.createElement('div');
+    playerCard.className =
+      'flex items-center p-2 border-2 rounded cursor-pointer bg-white hover:bg-gray-200 hover:border-white ';
+    playerCard.innerHTML = `
+    <div class='flex'>
+      <div>
+      <img src="${player.photo}" alt="${player.name}" class="w-12 h-12 rounded-full mr-2"></div>
+      <div>
+        <p class="font-bold">${player.name}</p>
+        <div class="flex gap-4">
+        <p class="text-sm text-gray-500">${player.rating}</p>
+        <p class="text-sm text-gray-500">${player.position}</p></div>
+        <p class="text-sm text-gray-500">${player.nationality}</p>
+      </div></div>
+    `;
+    playerCard.addEventListener('click', () => selectPlayer(player, target));
+    container.appendChild(playerCard);
+  });
+}
+
 
