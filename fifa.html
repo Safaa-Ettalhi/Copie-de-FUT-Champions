@@ -53,51 +53,51 @@
     </header>
     
 
-      <section class="h-[700px] w-full flex justify-around items-center  " style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;" >
+      <section class="h-[700px] w-full flex justify-around items-center " style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;" >
         <div class="relative mt-36">
-             <img src="https://www.futbin.com/design2/img/static/field-bg.svg" alt="" style="height: 600px; ">
+             <img src="https://www.futbin.com/design2/img/static/field-bg.svg" alt="" style="height: 600px; " id="terrain">
              <div class="absolute w-full max-w-4xl grid grid-rows-3 grid-cols-5 gap-y-24 "style="top: -45px;">
 
         
-                <div class="row-start-1 col-start-2 flex justify-center relative vide" >
+                <div id="card1" class="row-start-1 col-start-2 flex justify-center relative vide" >
                   <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
                  
                 </div>
-                <div class="row-start-1 col-start-3 flex justify-center " >
+                <div id="card2" class="row-start-1 col-start-3 flex justify-center " >
                   <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-                <div class="row-start-1 col-start-4 flex justify-center" >
+                <div id="card3" class="row-start-1 col-start-4 flex justify-center" >
                   <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
           
                 
-                <div class="row-start-2 col-start-2 flex justify-center" >
+                <div id="card4" class="row-start-2 col-start-2 flex justify-center" >
                   <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-                <div class="row-start-2 col-start-3 flex justify-center">
+                <div id="card5" class="row-start-2 col-start-3 flex justify-center">
                   <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-                <div class="row-start-2 col-start-4 flex justify-center">
+                <div id="card6" class="row-start-2 col-start-4 flex justify-center">
                   <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-          
-        
-                <div class="row-start-3 col-start-1 flex justify-center">
+
+                
+                <div id="card7" class="row-start-3 col-start-1 flex justify-center">
                   <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-                <div class="row-start-3 col-start-2 flex justify-center">
+                <div id="card8" class="row-start-3 col-start-2 flex justify-center">
                   <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-                <div class="row-start-3 col-start-4 flex justify-center">
+                <div id="card9" class="row-start-3 col-start-4 flex justify-center">
                   <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
-                <div class="row-start-3 col-start-5 flex justify-center">
+                <div id="card10" class="row-start-3 col-start-5 flex justify-center">
                   <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
                 </div>
         
               </div>
         
-              <div class="relative flex justify-center " style="top: -130px;" playerId="1">
+              <div id="card11" class="relative flex justify-center " style="top: -130px;" playerId="1">
                 <img src="baggef.webp" alt="Goalkeeper" class="h-32 w-24 vide" onclick="pop(this)">
               </div>
                 
@@ -127,10 +127,10 @@
 
       <!-- popup pour ajouter un joueur au terrain ou le modifier -->
       <div id="playerModal" class="hidden fixed inset-0 flex justify-center  bg-black bg-opacity-50 hidden z-50">
-        <div class="bg-white p-8 rounded-lg  w-[370px] md:w-[500px]  relative shadow-lg overflow-y-auto">
+        <div class="bg-gray-200 p-8 rounded-lg  w-[370px] md:w-[500px]  relative shadow-lg overflow-y-auto">
           <h2 class="text-2xl font-bold mb-6 text-[#00bf63] text-center">Choisis un joueur</h2>
           <!-- affichage des joueur -->
-          <div id="playersContainer" class="grid grid-cols-2 gap-4 ">
+          <div id="playersContainer" class="grid grid-cols-2 gap-4  ">
            
           </div>
           <div class="flex justify-center items-center">
