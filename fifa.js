@@ -4,66 +4,15 @@ document.getElementById('burger').addEventListener('click',function(){
     menu.classList.toggle('hidden');
 })
 
-//  open the popup add players
+//  open the popup add players in pageplayers
 function openPopup() {
   document.getElementById("playerPopup").classList.remove("hidden");
 }
 
-//  close the popup
+//  close the popup to add players in pageplayers
 function closePopup() {
   document.getElementById("playerPopup").classList.add("hidden");
 }
-// open the popup add players in terrain
-function pop(tst){
-  if(tst.classList.contains('vide')){
-    //select a player
-    console.log('select a player');
-  }else{
-    //update player
-    document.getElementById("pop_up_ajoute").classList.toggle('hidden');
-    let id = tst.parentElement.getAttribute('playerId');
-    const player = data.players.find(item => item.id == id);
-    if(player){
-      updateId.value = player.id
-      updateName.value = player.name
-      updateClub.value = player.club
-      updatePosition.value= player.position
-      updateNatio.value= player.nationality
-      updatePhoto.value= player.photo
-      updatePace.value= player.pace
-      updateShooting.value= player.shooting
-      updatePassing.value= player.passing
-      updateDribbling.value= player.dribbling
-      updateDefending.value= player.defending
-      updatePhysical.value= player.physical
-    }
-    
-  }
-}
-
-function update(){
-  const player = {
-    'id' : updateId.value,
-    'name' : updateName.value,
-    'club' : updateClub.value,
-    'position' : updatePosition.value,
-    'nationality' : updateNatio.value,
-    'photo' : updatePhoto.value,
-    'pace' : updatePace.value,
-    'shooting' : updateShooting.value,
-    'passing' : updatePassing.value,
-    'dribbling' : updateDribbling.value,
-    'defending' : updateDefending.value,
-    'physical' : updatePhysical.value,
-  }
-
-  const index = data.players.findIndex(item => item.id == player.id)
-  if(index != -1){
-    data.players[index] = player
-    localStorage.setItem("players", JSON.stringify(data));
-  }
-}
-
 // recuperation des donner joueurs 
 document.querySelectorAll
 let data = [];
@@ -132,10 +81,8 @@ function displayAllPlayers(dataplayers){
               <span id="defending" class="text-sm font-bold ">${element.defending}</span>
               <span id="physical" class="text-sm font-bold ">${element.physical}</span>
             </div>
-            <button onclick="deletePlayer(${element.id})" class="p-1 rounded-full bg-red-600  hover:bg-red-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7L5 7M10 11V17M14 11V17M7 7V5C7 4.44772 7.44772 4 8 4H16C16.5523 4 17 4.44772 17 5V7M5 7L19 7M12 11V17" />
-              </svg>
+            <button onclick="deletePlayer(${element.id})" class=" rounded-full bg-red-600 h-8 w-8 text center  hover:bg-red-800">
+              <i class="ri-delete-bin-7-line"></i>
             </button>
            </div>
     `
@@ -173,10 +120,8 @@ function displayAllPlayers(dataplayers){
                 <span id="defending" class="text-sm font-bold ">${element.speed}</span>
                 <span id="physical" class="text-sm font-bold ">${element.positioning}</span>
           </div>
-          <button onclick="deletePlayer(${element.id})" class="p-1 rounded-full bg-red-600  hover:bg-red-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7L5 7M10 11V17M14 11V17M7 7V5C7 4.44772 7.44772 4 8 4H16C16.5523 4 17 4.44772 17 5V7M5 7L19 7M12 11V17" />
-              </svg>
+          <button onclick="deletePlayer(${element.id})" class=" rounded-full bg-red-600 h-8 w-8 text center  hover:bg-red-800">
+              <i class="ri-delete-bin-7-line"></i>
           </button>
          </div>
   `
@@ -264,5 +209,24 @@ function deletePlayer(playerId) {
     displayAllPlayers(data.players);
 
   }
+}
+
+
+
+// function qui permet dafficher un modal pour ajouter au terrain 
+function pop(card) {
+  if (card.classList.contains('vide')) {
+   
+    console.log('select a player');
+    document.getElementById('playerModal').classList.remove('hidden');
+    displayPlayersInModal(data.players, card.parentElement.id); 
+
+  
+  }
+}
+
+// close modal 
+function closeModal() {
+  document.getElementById('playerModal').classList.add('hidden');
 }
 
