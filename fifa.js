@@ -356,7 +356,7 @@ function validate() {
       return false;
   }
 
-  // Validation que les valeurs sont dans l'intervalle 1 à 100
+  
   if (rating < 1 || rating > 100 || pace < 1 || pace > 100 || shooting < 1 || shooting > 100 || 
       passing < 1 || passing > 100 || dribbling < 1 || dribbling > 100 || defending < 1 || defending > 100 || 
       physical < 1 || physical > 100) {
@@ -365,7 +365,7 @@ function validate() {
   }
 
   return true
-  // Si tout est valide, procéder à l'ajout du joueur
+  
   alert("Le joueur a été ajouté avec succès!");
 }
 
