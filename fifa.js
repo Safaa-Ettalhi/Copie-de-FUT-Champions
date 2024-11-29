@@ -51,7 +51,7 @@ function displayAllPlayers(dataplayers){
     dataplayers.forEach(element => {
         if(element.position != 'GK'){
     players.innerHTML += `
-      <div class="relative w-72 bg-cover bg-center p-4 text-white" style="background-image: url('baggef.webp');">
+      <div class="relative w-72 bg-cover bg-center p-4 text-white" style="background-image: url('bf.png');">
             <div id="rating" class="absolute top-16 left-10   text-4xl font-bold">
               ${element.rating}
             </div>
@@ -90,7 +90,7 @@ function displayAllPlayers(dataplayers){
     `
   }else{
     players.innerHTML += `
-    <div class="relative w-72 bg-cover bg-center p-4 text-white" style="background-image: url('baggef.webp');">
+    <div class="relative w-72 bg-cover bg-center p-4 text-white" style="background-image: url('bf.png');">
           <div id="rating" class="absolute top-16 left-10   text-4xl font-bold">
             ${element.rating}
           </div>
@@ -252,6 +252,8 @@ function displayPlayersInModal(players, target) {
 
   // Vérifiez les données ici
   const container = document.getElementById('playersContainer');
+  console.log(container);
+  
   container.innerHTML = ''; 
 
   playersClone.forEach((player) => {
@@ -279,7 +281,7 @@ function selectPlayer(player, targetCardId) {
   // Récupérer la carte ciblée par son ID
   const targetCard = document.getElementById(targetCardId);
   targetCard.innerHTML = `
-    <div class="relative w-24 h-32 bg-cover bg-center p-2 text-white" style="background-image: url('./baggef.webp');" onclick="pop(this)" >
+    <div class="relative w-24 h-32 bg-cover bg-center p-2 text-white" style="background-image: url('./bf.png');" onclick="pop(this)" >
       <div id="rating" class="absolute mt-1 top-3 left-3 text-xs font-semibold">
         ${player.rating}
       </div>
@@ -311,7 +313,7 @@ function removePlayer(targetCardId) {
   
   // Réinitialiser le contenu
   targetCard.innerHTML = `
-    <img src="baggef.webp" alt="Empty Card" class="h-32 w-24 vide" onclick="pop(this)">
+    <img src="bf.png" alt="Empty Card" class="h-32 w-24 vide" onclick="pop(this)">
   `;
  
 }
