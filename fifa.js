@@ -1,3 +1,5 @@
+let stadiumPlayers = []
+
 // show menu buger for phone
 let menu = document.getElementById("menu-mobile");
 document.getElementById('burger').addEventListener('click',function(){
@@ -154,46 +156,47 @@ function searchPlayer() {
 // ajouter un joueur 
 function AddPlayer() {
   // Récupération des valeurs
-  const playerName = document.getElementById('playerName').value;
-  const photo = document.getElementById('img').value; 
-  const playerPosition = document.getElementById('playerPosition').value;
-  const nationality = document.getElementById('Nationaliter').value;
-  const flag = document.getElementById('flag').value; 
-  const club = document.getElementById('club').value;
-  const logo = document.getElementById('logo').value; 
-  const rating = document.getElementById('rating').value;
-  const pace = document.getElementById('pace').value;
-  const shooting = document.getElementById('shooting').value;
-  const passing = document.getElementById('passing').value;
-  const dribbling = document.getElementById('dribbling').value;
-  const defending = document.getElementById('defending').value;
-  const physical = document.getElementById('physical').value;
+  const playerName = document.getElementById('playerName');
+  const photo = document.getElementById('img'); 
+  const playerPosition = document.getElementById('playerPosition');
+  const nationality = document.getElementById('Nationaliter');
+  const flag = document.getElementById('flag'); 
+  const club = document.getElementById('club');
+  const logo = document.getElementById('logo'); 
+  const rating = document.getElementById('rating');
+  const pace = document.getElementById('pace');
+  const shooting = document.getElementById('shooting');
+  const passing = document.getElementById('passing');
+  const dribbling = document.getElementById('dribbling');
+  const defending = document.getElementById('defending');
+  const physical = document.getElementById('physical');
 
-  // Création  d'un nouvel objet joueur
-  const newPlayer = {
-    id : data.players.length > 0 ? data.players[data.players.length-1].id+1 : 1,
-    name: playerName,
-    position: playerPosition,
-    nationality: nationality,
-    club: club,
-    rating: rating,
-    pace: pace,
-    shooting: shooting,
-    passing: passing,
-    dribbling: dribbling,
-    defending: defending,
-    physical: physical,
-    photo: photo, 
-    flag: flag, 
-    logo: logo 
-  };
-  // ajouter l'objet au liste des players
-  data.players.push(newPlayer);
-  
-  localStorage.setItem('players', JSON.stringify(data));
-  displayAllPlayers(data.players);
-  closePopup();
-
+  if(validation({ name: playerName, photo, playerPosition, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical })){
+    // Création  d'un nouvel objet joueur
+    const newPlayer = {
+      id : data.players.length > 0 ? data.players[data.players.length-1].id+1 : 1,
+      name: playerName.value,
+      position: playerPosition.value,
+      nationality: nationality.value,
+      club: club.value,
+      rating: rating.value,
+      pace: pace.value,
+      shooting: shooting.value,
+      passing: passing.value,
+      dribbling: dribbling.value,
+      defending: defending.value,
+      physical: physical.value,
+      photo: photo.value, 
+      flag: flag.value, 
+      logo: logo.value 
+    };
+    // ajouter l'objet au liste des players
+    data.players.push(newPlayer);
+    
+    localStorage.setItem('players', JSON.stringify(data));
+    displayAllPlayers(data.players);
+    closePopup();
+  }
 }
 
 // supression  d-un joueur 
@@ -226,11 +229,32 @@ function closeModal() {
 
 // afficher les joueur dans le modal
 function displayPlayersInModal(players, target) {
-  // console.log(target); // Vérifiez les données ici
+  const positions = {
+    def: ['CB', 'LB', 'RB'],
+    mid: ['CM', 'CDM', 'RM', 'LM'],
+    att: ['LW', 'ST', 'RW'],
+  } 
+
+  const targetCard = document.getElementById(target)
+  let playersClone = [...players]
+
+  if(targetCard.classList.contains('def')){
+    playersClone = playersClone.filter(item => positions.def.findIndex(i => i == item.position) != -1)
+  }else if(targetCard.classList.contains('mid')){
+    playersClone = playersClone.filter(item => positions.mid.findIndex(i => i == item.position) != -1)
+  }else if(targetCard.classList.contains('att')){
+    playersClone = playersClone.filter(item => positions.att.findIndex(i => i == item.position) != -1)
+  }else{
+    playersClone = playersClone.filter(item => item.position == 'GK')
+  }
+
+  playersClone = playersClone.filter(item => stadiumPlayers.findIndex(i => i == item.id) == -1)
+
+  // Vérifiez les données ici
   const container = document.getElementById('playersContainer');
   container.innerHTML = ''; 
 
-  players.forEach((player) => {
+  playersClone.forEach((player) => {
     const playerCard = document.createElement('div');
     playerCard.className =
       'flex items-center p-2 border-2 rounded cursor-pointer bg-white hover:bg-gray-200 hover:border-white ';
@@ -250,5 +274,3 @@ function displayPlayersInModal(players, target) {
     container.appendChild(playerCard);
   });
 }
-
-
