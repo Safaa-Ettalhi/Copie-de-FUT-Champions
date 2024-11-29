@@ -3,8 +3,11 @@ let stadiumPlayers = []
 // show menu buger for phone
 let menu = document.getElementById("menu-mobile");
 document.getElementById('burger').addEventListener('click',function(){
-    menu.classList.toggle('hidden');
+    menu.classList.remove('hidden');
 })
+function closed(){
+  menu.classList.add('hidden');
+}
 
 //  open the popup add players in pageplayers
 function openPopup() {
@@ -171,7 +174,7 @@ function AddPlayer() {
   const defending = document.getElementById('defending');
   const physical = document.getElementById('physical');
 
-  if(validation({ name: playerName, photo, playerPosition, nationality, flag, club, logo, rating, pace, shooting, passing, dribbling, defending, physical })){
+  if(validate()){
     // Création  d'un nouvel objet joueur
     const newPlayer = {
       id : data.players.length > 0 ? data.players[data.players.length-1].id+1 : 1,
@@ -196,6 +199,7 @@ function AddPlayer() {
     localStorage.setItem('players', JSON.stringify(data));
     displayAllPlayers(data.players);
     closePopup();
+    menu.classList.add('hidden');
   }
 }
 
@@ -317,3 +321,52 @@ function removePlayer(targetCardId) {
   `;
  
 }
+
+function validate() {
+  // Récupération des valeurs des champs
+  const playerName = document.getElementById("playerName").value;
+  const photo = document.getElementById("img").value;
+  const playerPosition = document.getElementById("playerPosition").value;
+  const nationality = document.getElementById("Nationaliter").value;
+  const flag = document.getElementById("flag").value;
+  const club = document.getElementById("club").value;
+  const logo = document.getElementById("logo").value;
+  const rating = document.getElementById("rating").value;
+  const pace = document.getElementById("pace").value;
+  const shooting = document.getElementById("shooting").value;
+  const passing = document.getElementById("passing").value;
+  const dribbling = document.getElementById("dribbling").value;
+  const defending = document.getElementById("defending").value;
+  const physical = document.getElementById("physical").value;
+
+  // Validation des champs obligatoires
+  if (!playerName || !photo || !playerPosition || !nationality || !flag || !club || !logo) {
+      alert("Veuillez remplir tous les champs obligatoires.");
+      return false; 
+  }
+
+  // Validation des compétences (numériques) pour s'assurer qu'elles ne sont pas égales à 0
+  if (!rating || !pace || !shooting || !passing || !dribbling || !defending || !physical) {
+      alert("Les valeurs des compétences (note, vitesse, tir, passe, dribble, défense, physique) sont obligatoires.");
+      return false;
+  }
+
+  if (rating == 0 || pace == 0 || shooting == 0 || passing == 0 || dribbling == 0 || defending == 0 || physical == 0) {
+      alert("Les compétences ne peuvent pas être égales à 0.");
+      return false;
+  }
+
+  // Validation que les valeurs sont dans l'intervalle 1 à 100
+  if (rating < 1 || rating > 100 || pace < 1 || pace > 100 || shooting < 1 || shooting > 100 || 
+      passing < 1 || passing > 100 || dribbling < 1 || dribbling > 100 || defending < 1 || defending > 100 || 
+      physical < 1 || physical > 100) {
+      alert("Les compétences doivent être entre 1 et 100.");
+      return flase;
+  }
+
+  return true
+  // Si tout est valide, procéder à l'ajout du joueur
+  alert("Le joueur a été ajouté avec succès!");
+}
+
+
