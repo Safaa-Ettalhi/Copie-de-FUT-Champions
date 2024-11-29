@@ -82,4 +82,4 @@ Une application interactive pour créer, personnaliser et gérer une équipe FUT
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/Yassir-Zbida/FUT-Champions
+   git clone https://github.com/Safaa-Ettalhi/Copie-de-FUT-Champions
