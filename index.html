@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUT Champions - Create Your Dream Lineup</title>
+    <link rel="icon" type="image/x-icon" href="LOGOSAFAA.svg">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="fifa.js" defer></script>
+    
+</head>
+<body>
+
+  <header class="flex justify-between items-center px-6 py-2 bg-black text-white lg:justify-start lg:space-x-72">
+        <div class="flex items-center  ">
+          <a href="fifa.html">
+           <img src="LOGOSAFAA.svg" class="h-16  mr-3 ">
+          </a>
+        </div>
+             <!-- desktop  -->
+        <nav class="hidden md:flex space-x-20 font-semibold  ">
+          
+          <a href="fifa.html"  class="hover:text-[#00bf63]">Home</a>
+            <a href="players.html" class="hover:text-[#00bf63]">Players</a>
+            <!-- <a href="formation"  class="hover:text-[#00bf63]">Formation</a> -->
+            <a href="#" class="hover:text-[#00bf63]">Contact</a>
+          
+        </nav>
+              <!-- phone  -->
+
+              <div class="fixed w-1/2  inset-y-0 right-0 bg-gray-700 bg-opacity-90 hidden flex justify-center   z-[10] " id="menu-mobile">    
+                <nav class="flex flex-col items-center p-10 list-none space-y-10  ">
+                  <a href="fifa.html"  class="hover:text-[#00bf63]">Home</a>
+                  <a href="players.html" class="hover:text-[#00bf63]">Players</a>
+                  <!-- <a href="formation.html"  class="hover:text-[#00bf63]">Formation</a> -->
+                  <a href="contact.html" class="hover:text-[#00bf63]">Contact</a>
+                  
+                </nav> 
+                
+              </div>  
+          
+        </div>    
+       
+        
+        <button class="md:hidden text-2xl z-[11] " id="burger">
+          <i class="ri-menu-line"></i>
+        </button>
+         
+
+    </header>
+    
+
+      <section class="h-[700px] md:h-[700px] md:w-full md:flex justify-around items-center " style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover;" >
+        
+        <div class="relative md:mt-36">
+             <img src="https://www.futbin.com/design2/img/static/field-bg.svg " alt=""  id="terrain" class="h-[600px] ">
+             <div class="absolute w-full max-w-4xl grid grid-rows-3 grid-cols-5 gap-y-1 md:gap-y-24 top-[44px] md:top-[-45px] ">
+
+        
+                <div id="card1" class="row-start-1 col-start-2 flex justify-center relative vide att" >
+                  <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
+                 
+                </div>
+                <div id="card2" class="row-start-1 col-start-3 flex justify-center  att" >
+                  <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+                <div id="card3" class="row-start-1 col-start-4 flex justify-center att" >
+                  <img src="baggef.webp" alt="Forward" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+          
+                
+                <div id="card4" class="row-start-2 col-start-2 flex justify-center mid" >
+                  <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+                <div id="card5" class="row-start-2 col-start-3 flex justify-center mid">
+                  <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+                <div id="card6" class="row-start-2 col-start-4 flex justify-center mid">
+                  <img src="baggef.webp" alt="Midfielder" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+
+
+                <div id="card7" class="row-start-3 col-start-1 flex justify-center def">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+                <div id="card8" class="row-start-3 col-start-2 flex justify-center def">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+                <div id="card9" class="row-start-3 col-start-4 flex justify-center def">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+                <div id="card10" class="row-start-3 col-start-5 flex justify-center def">
+                  <img src="baggef.webp" alt="Defender" class="h-32 w-24 vide" onclick="pop(this)">
+                </div>
+        
+              </div>
+        
+              <div id="card11" class="relative flex justify-center top-[-286px] md:top-[-130px] w-fit mx-auto"  >
+                <img src="baggef.webp" alt="Goalkeeper" class="h-32 w-24 vide" onclick="pop(this)">
+              </div>
+                
+
+        </div>
+             
+        <div class="text-white flex flex-col gap-4 bg-black h-60 w-60 p-6 rounded-[10px] ">
+          <div class="flex flex-col gap-4 mt-0">
+          <h1 class="text-2xl">Formations:</h1>
+          <select name="" id="" class="text-white bg-gray-800 text-center ">
+              <option value="">4-3-3</option>
+              <option value="">4-4-2</option>
+              
+          </select></div>
+          <div class="flex flex-col gap-4 ">
+              <h1 class="text-2xl">Score:</h1>
+              <span class="ml-4 text-xl font-semibold"> 100</span>
+          </div>
+
+
+
+
+
+       </div>
+            
+      </section>
+
+      <!-- popup pour ajouter un joueur au terrain ou le modifier -->
+      <div id="playerModal" class="hidden fixed inset-0 flex justify-center  bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-gray-200 p-8 rounded-lg  w-[370px] md:w-[500px]  relative shadow-lg overflow-y-auto">
+          <h2 class="text-2xl font-bold mb-6 text-[#00bf63] text-center">Choisis un joueur</h2>
+          <!-- affichage des joueur -->
+          <div id="playersContainer" class="grid grid-cols-2 gap-4  ">
+           
+          </div>
+          <div class="flex justify-center items-center">
+            <button onclick="closeModal()" class="mt-4 bg-red-500 text-white px-12 py-2 rounded text-center">Close</button>
+          </div>
+          <button class="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-black" onclick="closeModal()">&times;</button>
+        </div>
+      </div>    
+      
+      
+
+      
+
+   <!-- Footer -->
+    <footer class="bg-black text-white py-6 ">
+        <div class="container  flex flex-col justify-center items-center gap-4">
+            <p class="text-sm mb-2"> &copy; 2024 Ultimate Team EA FC 25. Tous droits réservés.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://facebook.com" target="_blank" class="hover:text-blue-600">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="hover:text-blue-300">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-pink-800">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-[#00bf63]">Conçu et développé par Safaa Ettalhi.</p>
+        </div>
+    </footer>
+
+   
+       
+      
+</body>
+</html>
