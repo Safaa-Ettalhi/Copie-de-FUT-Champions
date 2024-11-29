@@ -304,3 +304,14 @@ function selectPlayer(player, targetCardId) {
   closeModal();
 }
 
+// supprimer un player dans le terrain
+function removePlayer(targetCardId) {
+  // Récupérer de carte selon leur id
+  const targetCard = document.getElementById(targetCardId);
+  
+  // Réinitialiser le contenu
+  targetCard.innerHTML = `
+    <img src="baggef.webp" alt="Empty Card" class="h-32 w-24 vide" onclick="pop(this)">
+  `;
+ 
+}
