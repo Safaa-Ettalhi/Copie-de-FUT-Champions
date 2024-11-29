@@ -274,3 +274,33 @@ function displayPlayersInModal(players, target) {
     container.appendChild(playerCard);
   });
 }
+// selectionner un player dans le terrain 
+function selectPlayer(player, targetCardId) {
+  // Récupérer la carte ciblée par son ID
+  const targetCard = document.getElementById(targetCardId);
+  targetCard.innerHTML = `
+    <div class="relative w-24 h-32 bg-cover bg-center p-2 text-white" style="background-image: url('./baggef.webp');" onclick="pop(this)" >
+      <div id="rating" class="absolute mt-1 top-3 left-3 text-xs font-semibold">
+        ${player.rating}
+      </div>
+      <div id="position" class="absolute mt-1 top-7 left-3 text-xs font-bold rounded">
+        ${player.position}
+      </div>
+      <div class="flex flex-col items-center mt-1">
+        <img id="photo" src="${player.photo}" alt="${player.name}" class="w-16 h-14">
+        <h1 id="name" class="text-xs font-semibold text-center">${player.name}</h1>
+        <div class="flex justify-center text-xs">${player.nationality}</div>
+      </div>
+      <button class="absolute top-4 right-2 w-4 h-4 rounded-full bg-red-500 text-black flex items-center justify-center hover:bg-gray-300 hover:text-red-600" onclick="removePlayer('${targetCardId}')">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L6 10M18 18L18 10M4 6H20M9 6V4H15V6" />
+        </svg>
+      </button>
+    </div>
+  `;
+
+  stadiumPlayers.push(player.id)
+  console.log(stadiumPlayers)
+  closeModal();
+}
+
