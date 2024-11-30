@@ -225,6 +225,10 @@ function pop(card) {
   if(card.parentElement && card.parentElement.id.includes('card')){
     document.getElementById('playerModal').classList.remove('hidden');
     displayPlayersInModal(data.players, card.parentElement.id);
+    if(!card.getAttribute("src")){
+      console.log(card);
+      stadiumPlayers=stadiumPlayers.filter(item=>item!=card.id)
+    }
   }
 }
 
@@ -258,7 +262,7 @@ function displayPlayersInModal(players, target) {
 
   // Vérifiez les données ici
   const container = document.getElementById('playersContainer');
-  console.log(container);
+  //console.log(container);
   
   container.innerHTML = ''; 
 
@@ -278,7 +282,11 @@ function displayPlayersInModal(players, target) {
         <p class="text-sm text-gray-500">${player.nationality}</p>
       </div></div>
     `;
-    playerCard.addEventListener('click', () => selectPlayer(player, target));
+    playerCard.addEventListener('click', (e) => {
+      // console.log(e.target);
+      
+      selectPlayer(player, target)
+    });
     container.appendChild(playerCard);
   });
 }
@@ -287,7 +295,7 @@ function selectPlayer(player, targetCardId) {
   // Récupérer la carte ciblée par son ID
   const targetCard = document.getElementById(targetCardId);
   targetCard.innerHTML = `
-    <div class="relative w-24 h-32 bg-cover bg-center p-2 text-white" style="background-image: url('./bf.png');" onclick="pop(this)" >
+    <div class="relative w-24 h-32 bg-cover bg-center p-2 text-white" style="background-image: url('./bf.png');" id="${player.id}" onclick="pop(this)" >
       <div id="rating" class="absolute mt-1 top-3 left-3 text-xs font-semibold">
         ${player.rating}
       </div>
@@ -308,7 +316,7 @@ function selectPlayer(player, targetCardId) {
   `;
 
   stadiumPlayers.push(player.id)
-  console.log(stadiumPlayers)
+  //console.log(stadiumPlayers)
   closeModal();
 }
 
