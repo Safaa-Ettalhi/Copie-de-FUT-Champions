@@ -222,8 +222,10 @@ function deletePlayer(playerId) {
 
 // function qui permet dafficher un modal pour ajouter au terrain 
 function pop(card) {
+  if(card.parentElement && card.parentElement.id.includes('card')){
     document.getElementById('playerModal').classList.remove('hidden');
-    displayPlayersInModal(data.players, card.parentElement.id);  
+    displayPlayersInModal(data.players, card.parentElement.id);
+  }
 }
 
 // close modal 
