@@ -3,11 +3,8 @@ let stadiumPlayers = []
 // show menu buger for phone
 let menu = document.getElementById("menu-mobile");
 document.getElementById('burger').addEventListener('click',function(){
-    menu.classList.remove('hidden');
+    menu.classList.toggle('hidden');
 })
-function closed(){
-  menu.classList.add('hidden');
-}
 
 //  open the popup add players in pageplayers
 function openPopup() {
