@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de Contact</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="fifa.js" defer></script>
     
 </head>
 
@@ -28,7 +31,7 @@
 
               <div class="fixed w-1/2  inset-y-0 right-0 bg-gray-700 bg-opacity-90 hidden flex justify-center   z-[10] " id="menu-mobile">    
                 <nav class="flex flex-col items-center p-10 list-none space-y-10  ">
-                  <a href="fifa.html"  class="hover:text-[#00bf63]">Home</a>
+                  <a href="index.html"  class="hover:text-[#00bf63]">Home</a>
                   <a href="players.html" class="hover:text-[#00bf63]">Players</a>
                   <a href="contact.html" class="hover:text-[#00bf99]text-[#00bf63]">Contact</a>
                   
@@ -108,34 +111,34 @@
             <p class="mt-4 text-sm text-[#00bf63]">Conçu et développé par Safaa Ettalhi.</p>
         </div>
     </footer>
-    <script>
-        // Fonction de gestion du formulaire
+   <script>
+            // Fonction de gestion du formulaire
         function handleSubmit(event) {
-            event.preventDefault(); 
+        event.preventDefault(); 
 
-            
+        
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
         const nameRegex = /^[a-zA-Z\s'-]{2,50}$/; 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-        const messageRegex = /^.{10,500}$/; // Entre 10 et 500 caractères pour le message
+        const messageRegex = /^.{5,500}$/; // Entre 10 et 500 caractères pour le message
 
         // Validation des champs
         if (!nameRegex.test(name)) {
-            alert("Veuillez entrer un nom valide (2 à 50 caractères, sans chiffres).");
-            return;
+        alert("Veuillez entrer un nom valide (2 à 50 caractères, sans chiffres).");
+        return;
         }
 
         if (!emailRegex.test(email)) {
-            alert("Veuillez entrer une adresse email valide.");
-            return;
+        alert("Veuillez entrer une adresse email valide.");
+        return;
         }
 
         if (!messageRegex.test(message)) {
-            alert("Votre message doit contenir entre 10 et 500 caractères.");
-            return;
+        alert("Votre message doit contenir entre 5 et 500 caractères.");
+        return;
         }
 
         // Afficher message de confirmation
@@ -145,9 +148,9 @@
 
         // Réinitialiser le formulaire
         document.getElementById('contact-form').reset();
-    }
-        
-    </script>
+        }
+
+   </script>
 
 </body>
 
