@@ -50,45 +50,42 @@
     </header>
 
     <div class="max-w-4xl mx-auto px-4 py-16">
-        <!-- Formulaire de contact -->
-        <form id="contact-form" class="bg-white p-8 shadow-md rounded-lg space-y-6" onsubmit="return handleSubmit(event)">
-             <!-- En-tête -->
+       
+        <form id="contact-form" class="bg-white p-8 shadow-md rounded-lg space-y-6" >
         <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-[#00bf63]">Contactez-nous</h1>
             <p class="mt-4 text-lg text-gray-700">Nous serions ravis de recevoir vos questions ou commentaires.</p>
         </div>
 
-            <!-- Nom -->
             <div>
                 <label for="name" class="block text-gray-700 font-semibold">Votre Nom</label>
-                <input type="text" id="name" name="name" required
-                    class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+                <input type="text" id="name" name="name"
+                    class="w-full p-3 mt-2 border border-gray-300 rounded-md " />
             </div>
 
-            <!-- Email -->
             <div>
                 <label for="email" class="block text-gray-700 font-semibold">Votre Email</label>
-                <input type="email" id="email" name="email" required
-                    class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+                <input type="email" id="email" name="email"
+                    class="w-full p-3 mt-2 border border-gray-300 rounded-md " />
             </div>
 
-            <!-- Message -->
+           
             <div>
                 <label for="message" class="block text-gray-700 font-semibold">Votre Message</label>
-                <textarea id="message" name="message" rows="5" required
-                    class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:outline-none"></textarea>
+                <textarea id="message" name="message" rows="5" 
+                    class="w-full p-3 mt-2 border border-gray-300 rounded-md "></textarea>
             </div>
 
-            <!-- Bouton de soumission -->
+           
             <div>
-                <button type="submit"
-                    class="w-full p-3 bg-[#00bf63] text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300">
+                <button type="button"
+                    class="w-full p-3 bg-[#00bf63] text-white font-semibold rounded-md hover:bg-[#00bf99] " onclick="handleSubmit(event)">
                     Envoyer
                 </button>
             </div>
 
-            <!-- Message de confirmation -->
-            <p id="confirmation-message" class="text-green-500 hidden mt-4 text-center"></p>
+           
+            <p id="confirmation-message" class="text-green-500  mt-4 text-center"></p>
         </form>
 
     </div>
@@ -112,20 +109,21 @@
         </div>
     </footer>
    <script>
-            // Fonction de gestion du formulaire
-        function handleSubmit(event) {
-        event.preventDefault(); 
+            
+        function handleSubmit() {
+         
 
         
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        const nameRegex = /^[a-zA-Z\s'-]{2,50}$/; 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-        const messageRegex = /^.{5,500}$/; // Entre 10 et 500 caractères pour le message
+        const nameRegex = /^[a-zA-Z ]{2,50}$/; 
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        ; 
+        const messageRegex = /^.{5,500}$/; 
 
-        // Validation des champs
+       
         if (!nameRegex.test(name)) {
         alert("Veuillez entrer un nom valide (2 à 50 caractères, sans chiffres).");
         return;
@@ -141,12 +139,9 @@
         return;
         }
 
-        // Afficher message de confirmation
+        
         const confirmationMessage = document.getElementById('confirmation-message');
         confirmationMessage.textContent = `Merci, ${name}! Votre message a été envoyé. Nous vous répondrons bientôt.`;
-        confirmationMessage.classList.remove('hidden');
-
-        // Réinitialiser le formulaire
         document.getElementById('contact-form').reset();
         }
 
