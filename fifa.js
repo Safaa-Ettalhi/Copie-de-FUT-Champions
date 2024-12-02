@@ -6,7 +6,7 @@ document.getElementById('burger').addEventListener('click',function(){
     menu.classList.toggle('hidden');
 })
 
-//  open the popup add players in pageplayers
+//  open the popup add players in page players
 function openPopup() {
   document.getElementById("playerPopup").classList.remove("hidden");
 }
@@ -16,7 +16,7 @@ function closePopup() {
   document.getElementById("playerPopup").classList.add("hidden");
 }
 // recuperation des donner joueurs 
-document.querySelectorAll
+// document.querySelectorAll
 let data = [];
 
 async function fetchPlayers() {
@@ -59,11 +59,11 @@ function displayAllPlayers(dataplayers){
             ${element.position}
             </div>
             <div class="flex flex-col items-center mt-12">
-              <img id="photo" src="${element.photo}" alt="Lionel Messi" class="w-44">
+              <img id="photo" src="${element.photo}" alt="picture" class="w-44">
               <h1 id="name" class="text-xl font-bold">${element.name}</h1>
               <div class="flex items-center">
-                <img id="flag" src="${element.flag}" alt="Argentina" class="w-5 h-5 mr-2">
-                <img id="logo" src="${element.logo}" alt="Inter Miami" class="w-5 h-5 mr-2">
+                <img id="flag" src="${element.flag}" alt="pays" class="w-5 h-5 mr-2">
+                <img id="logo" src="${element.logo}" alt="logo" class="w-5 h-5 mr-2">
               </div>
             </div>
             <div class="flex flex-col  items-center space-y-1">
@@ -86,7 +86,7 @@ function displayAllPlayers(dataplayers){
             <button onclick="deletePlayer(${element.id})" class=" rounded-full bg-red-600 h-8 w-8 text center  hover:bg-red-800">
               <i class="ri-delete-bin-7-line"></i>
             </button>
-           </div>
+      </div>
     `
   }else{
     players.innerHTML += `
@@ -227,14 +227,17 @@ function deletePlayer(playerId) {
 
 
 
-// function qui permet dafficher un modal pour ajouter au terrain 
+// function qui permet dafficher un modal pour ajouter un joueur au terrain 
 function pop(card) {
-  if(card.parentElement && card.parentElement.id.includes('card')){
+  // console.log(card)
+    if(card.parentElement.id.includes('card')){
     document.getElementById('playerModal').classList.remove('hidden');
     displayPlayersInModal(data.players, card.parentElement.id);
-    if(!card.getAttribute("src")){
-      stadiumPlayers=stadiumPlayers.filter(item=>item!=card.id)
-    }
+    // if(!card.getAttribute("src")){
+    //   stadiumPlayers=stadiumPlayers.filter(item=>item!=card.id)
+    // }
+          stadiumPlayers=stadiumPlayers.filter(item=>item!=card.id)
+
   }
 }
 
@@ -265,8 +268,6 @@ function displayPlayersInModal(players, target) {
   }
 
   playersClone = playersClone.filter(item => stadiumPlayers.findIndex(i => i == item.id) == -1)
-
-  // Vérifiez les données ici
   const container = document.getElementById('playersContainer');
   //console.log(container);
   
@@ -296,6 +297,8 @@ function displayPlayersInModal(players, target) {
     container.appendChild(playerCard);
   });
 }
+
+
 // selectionner un player dans le terrain 
 function selectPlayer(player, targetCardId) {
   // Récupérer la carte ciblée par son ID
