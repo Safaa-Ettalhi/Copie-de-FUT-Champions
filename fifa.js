@@ -180,16 +180,26 @@ function AddPlayer() {
       nationality: nationality.value,
       club: club.value,
       rating: rating.value,
-      pace: pace.value,
-      shooting: shooting.value,
-      passing: passing.value,
-      dribbling: dribbling.value,
-      defending: defending.value,
-      physical: physical.value,
       photo: photo.value, 
       flag: flag.value, 
       logo: logo.value 
     };
+
+    if(newPlayer.position == 'GK'){
+      newPlayer['diving'] = pace.value
+      newPlayer['handling'] = shooting.value
+      newPlayer['kicking'] = passing.value
+      newPlayer['reflexes'] = dribbling.value
+      newPlayer['speed'] = defending.value
+      newPlayer['positioning'] = physical.value
+    }else{
+      newPlayer['pace'] = pace.value
+      newPlayer['shooting'] = shooting.value
+      newPlayer['passing'] = passing.value
+      newPlayer['dribbling'] = dribbling.value
+      newPlayer['defending'] = defending.value
+      newPlayer['physical'] = physical.value
+    }
     // ajouter l'objet au liste des players
     data.players.push(newPlayer);
     
@@ -223,7 +233,6 @@ function pop(card) {
     document.getElementById('playerModal').classList.remove('hidden');
     displayPlayersInModal(data.players, card.parentElement.id);
     if(!card.getAttribute("src")){
-      console.log(card);
       stadiumPlayers=stadiumPlayers.filter(item=>item!=card.id)
     }
   }
@@ -376,4 +385,50 @@ function validate() {
   alert("Le joueur a été ajouté avec succès!");
 }
 
+//change label popup
+document.getElementById('playerPosition').addEventListener('change', (e) => {
+  const pace = document.getElementById('pace')
+  const shooting = document.getElementById('shooting')
+  const passing = document.getElementById('passing')
+  const dribbling = document.getElementById('dribbling')
+  const defending = document.getElementById('defending')
+  const physical = document.getElementById('physical')
 
+  if(e.target.value == 'GK'){
+      pace.previousElementSibling.textContent = 'Diving'
+      pace.setAttribute('placeholder', 'Enter player diving')
+
+      shooting.previousElementSibling.textContent = 'Handling'
+      shooting.setAttribute('placeholder', 'Enter player handling')
+
+      passing.previousElementSibling.textContent = 'Kicking'
+      passing.setAttribute('placeholder', 'Enter player kicking')
+
+      dribbling.previousElementSibling.textContent = 'Reflexes'
+      dribbling.setAttribute('placeholder', 'Enter player reflexes')
+
+      defending.previousElementSibling.textContent = 'Speed'
+      defending.setAttribute('placeholder', 'Enter player speed')
+
+      physical.previousElementSibling.textContent = 'Positioning'
+      physical.setAttribute('placeholder', 'Enter player positioning')
+  }else{
+      pace.previousElementSibling.textContent = 'Pace'
+      pace.setAttribute('placeholder', 'Enter player pace')
+
+      shooting.previousElementSibling.textContent = 'Shooting'
+      shooting.setAttribute('placeholder', 'Enter player shooting')
+
+      passing.previousElementSibling.textContent = 'Passing'
+      passing.setAttribute('placeholder', 'Enter player passing')
+
+      dribbling.previousElementSibling.textContent = 'Dribbling'
+      dribbling.setAttribute('placeholder', 'Enter player dribbling')
+
+      defending.previousElementSibling.textContent = 'Defending'
+      defending.setAttribute('placeholder', 'Enter player defending')
+
+      physical.previousElementSibling.textContent = 'Physical'
+      physical.setAttribute('placeholder', 'Enter player physical')
+  }
+})
